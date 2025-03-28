@@ -25,7 +25,7 @@ public abstract class Usuario {
     @Column(nullable = false)
     private String senha;
 
-    public void setNomeCompleto(String nomeCompleto) {
+    protected void setNomeCompleto(String nomeCompleto) {
         if (nomeCompleto == null || nomeCompleto.isBlank()) {
             throw new RegraDeNegocioException("Nome não pode ser nulo ou estar em branco");
         }
@@ -33,13 +33,13 @@ public abstract class Usuario {
         this.nomeCompleto = nomeCompleto;
     }
 
-    public void setEmail(String email) {
+    protected void setEmail(String email) {
         if (email == null || email.isBlank()) {
             throw new RegraDeNegocioException("Email não pode ser nulo ou estar em branco");
         }
     }
 
-    public void setSenha(String senha) {
+    protected void setSenha(String senha) {
         if (senha == null || senha.isBlank()) {
             throw new RegraDeNegocioException("Senha não pode ser nula ou estar em branco");
         }
